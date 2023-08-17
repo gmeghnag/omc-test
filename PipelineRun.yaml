@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: greetings
+  namespace: omc-test
+spec:
+  pipelineRef:
+    name: greetings
+  params:
+    - name: FIRST_GREETING
+      value: $(tt.params.firstgreeting)
